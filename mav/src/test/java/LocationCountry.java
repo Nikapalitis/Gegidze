@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.Test;
@@ -20,9 +21,8 @@ public class LocationCountry {
         $(byText("Log in")).click();
         $(byText("Location country")).click();
         $(byText("Georgia")).click();
-        sleep(500);
         $(byXpath("//*[@id=\"content\"]/div[2]/div/div[1]/div[1]/div[2]/span[8]/span/div/div/div[2]/button")).click();
-
-        sleep(2000);
+        $(byText("Anni Gugunava")).shouldBe(Condition.visible);
+        sleep(1000);
     }
 }
